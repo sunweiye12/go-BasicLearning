@@ -16,7 +16,7 @@ if optionalStatement1; booleanExpression1 { // optionalStatement1：可选的声
 */
 
 func main() {
-	// 单个 if
+	// 单个 if  大声道
 	if true {
 		fmt.Println("if 语句")
 	}
