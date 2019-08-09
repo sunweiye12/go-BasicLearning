@@ -5,10 +5,15 @@ import "fmt"
 /*
 // if 语句格式
 // else if 和 else 都是可选的，且 else if 可以有多个
-// optionalStatement1 声明语句如（v := xx）中定义的变量其作用域只在 if ... else if ... else 范围内有效
-if optionalStatement1; booleanExpression1 { // optionalStatement1：可选的声明语句，booleanExpression1：真假表达式，为真执行 block1 后跳出
+// optionalStatement1 声明语句如（v := xx）中定义的变量其作用域
+// 只在 if ... else if ... else 范围内有效
+if optionalStatement1; booleanExpression1 {
+	//optionalStatement1：可选的声明语句，
+	//booleanExpression1：真假表达式，为真执行 block1 后跳出
     block1
-} else if optionalStatement2; booleanExpression2 { // optionalStatement1：可选的声明语句，booleanExpression1：真假表达式，为真且上面的条件都为假则执行 block2 后跳出
+} else if optionalStatement2; booleanExpression2 {
+	//optionalStatement1：可选的声明语句，
+	//booleanExpression1：真假表达式，为真且上面的条件都为假则执行 block2 后跳出
     block2
 } else { // 上面的条件都为假则执行 block3 后跳出
     block3
@@ -16,7 +21,7 @@ if optionalStatement1; booleanExpression1 { // optionalStatement1：可选的声
 */
 
 func main() {
-	// 单个 if  大声道
+	// 单个 if
 	if true {
 		fmt.Println("if 语句")
 	}
@@ -37,7 +42,8 @@ func main() {
 		fmt.Println("不会输出")
 	}
 
-	// if else if 更多
+	// if else if 更多  (***可以在 if 条件语句中声明局部变量***)
+	// ; 分号只有在多条命令在一行的时候才会用到
 	if v := 1; v > 5 {
 		fmt.Println("v==1 假，不输出")
 	} else if v++; v > 4 { // v == 2
