@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"strconv"		// strconv.Itoa() 用于将数字转换成字符串
+	"strconv" // strconv.Itoa() 用于将数字转换成字符串
 )
+
 /*
-接口用来定义行为。
+接口用来定义行为。相当于多个方法签名的集合
 Go 语言不同于面向对象语言，没有类的概念，也没有传统意义上的继承。
 Go 语言中的接口，用来定义一个或一组行为，某些对象实现了接口定义的行为，则称这些对象实现了（implement）该接口，类型即为该接口类型。
 定义接口也是使用 type 关键字，格式为：
@@ -19,7 +20,7 @@ Go 语言中的接口，用来定义一个或一组行为，某些对象实现�
 
 // 定义一个 Person 接口
 type Person interface {
-	Say(s string) string	// 每一个行为可以有传入的参数和返回的值
+	Say(s string) string // 每一个行为可以有传入的参数和返回的值
 	Walk(s string) string
 }
 
@@ -39,7 +40,7 @@ func (m Man) Walk(s string) string {
 	return "Age: " + strconv.Itoa(m.Age) + " and " + s
 }
 
-func main() {
+func main1() {
 	var m Man       // 声明一个类型为 Man 的变量
 	m.Name = "Mike" // 赋值
 	m.Age = 30

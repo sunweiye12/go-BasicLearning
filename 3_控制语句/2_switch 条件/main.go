@@ -44,7 +44,8 @@ func main() {
 	}
 
 	//带有表达式(后面的 case和表达式进行匹配)
-	switch v := 1; v {
+	v := 1
+	switch v {
 	case 0:
 		fmt.Println("条件不正确,不进行输出")
 	case 1:

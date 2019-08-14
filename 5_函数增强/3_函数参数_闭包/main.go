@@ -2,20 +2,35 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"runtime"
 )
 
 func main() {
+	// 匿名函数
+	a := func() {
+		fmt.Println("匿名函数")
+	}
+	a() // 调用匿名函数
+
+	// 闭包的使用
+	f := closure(2) //返回一个匿名函数
+	fmt.Println(f(10))
+
 	callback(1, Add)
 	// 函数的返回值是讲一个函数,此函数指向 p2
 	p2 := Add2()
 	fmt.Printf("Call Add2 for 3 gives: %v\n", p2(3))
 	// 次函数的返回值同样也是一个函数
-	where()
+
 	TwoAdder := Adder(2)
 	fmt.Printf("The result is: %v\n", TwoAdder(3))
 
+}
+
+// ------------闭包的使用------------
+func closure(x int) func(int) int {
+	return func(y int) int {
+		return x + y
+	}
 }
 
 // 此处参数为一个函数(在调用的时候应该注意)
@@ -45,7 +60,7 @@ func Adder(a int) func(b int) int {
 }
 
 // 通过过使用闭包来实现一个来封装一个调试的函数
-where := func () {
-	_, file, line, _ := runtime.Caller(1)	// 用于获取当前程序运行的状态
-	log.Printf("%s:%d", file, line)
-}
+//where := func () {
+//	_, file, line, _ := runtime.Caller(1)	// 用于获取当前程序运行的状态
+//	log.Printf("%s:%d", file, line)
+//}

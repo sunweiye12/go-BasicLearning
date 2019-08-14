@@ -5,7 +5,7 @@ import (
 )
 
 /*
-for 循环在 Go 语言中有多种格式选择：直接看例子
+for 循环在 Go 语言中有多种格式选择：直接看例子  --> if 和 for 循环都不用小括号 ,也没有有分号
 */
 func main() {
 
@@ -26,8 +26,9 @@ func main() {
 	fmt.Println()
 	fmt.Println("--------------遍历字符串---------------")
 	str := "hello 世界"
+	size := len(str) // 此处声明一个字符串长度,如果在 for循环中使用的话每次都会调用 len()方法,会比较耗时
 	//utf-8 遍历
-	for i := 0; i < len(str); i++ { // len()函数用于获取字符串长度
+	for i := 0; i < size; i++ { // len()函数用于获取字符串长度
 		chr := str[i]
 		//caye := reflect.TypeOf(chr)
 		fmt.Printf("%v", chr) // 输出：uint8
