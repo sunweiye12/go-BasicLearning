@@ -23,8 +23,8 @@ Channel
 func main3() {
 
 	//创建一个 channel 类型
-	c := make(chan bool) // 通道中存储的类型为 bool 类型
-	go func() {          // 执行匿名函数(将 true 存入沟道 c)
+	c := make(chan bool, 2) // 通道中存储的类型为 bool 类型
+	go func() {             // 执行匿名函数(将 true 存入沟道 c)
 		fmt.Println("Go Go Go!!!")
 		c <- true
 		c <- false
