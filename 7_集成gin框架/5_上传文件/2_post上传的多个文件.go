@@ -12,9 +12,10 @@ func main() {
 
 	router := gin.Default()
 	router.POST("/upload", func(c *gin.Context) {
-		file_1, _ := c.FormFile("myfile_1")
+		file_1, _ := c.FormFile("myfile_1") // 通过 button 对应的 name 获取对应的文件
 		file_2, _ := c.FormFile("myfile_2")
 		file_3, _ := c.FormFile("myfile_3")
+
 		c.IndentedJSON(200, gin.H{
 			"file_1": file_1.Filename,
 			"file_2": file_2.Filename,
