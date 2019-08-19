@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main2() {
+func main() {
 	router := gin.Default()
 
 	// 接收表单数据  (multipart/urlencoded)  --> 用于post 的表单或者urlencoded 提交的数据
@@ -22,6 +22,7 @@ func main2() {
 	router.POST("/post", func(c *gin.Context) {
 		// 获取表单中传递的数据
 		name := c.PostForm("name")
+		//name := c.BindJSON("name")
 		age := c.PostForm("age")
 		sex := c.DefaultPostForm("sex", "male")
 		// 获取 URL 中传递的数据

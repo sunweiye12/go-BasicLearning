@@ -34,6 +34,7 @@ func main() {
 	// 这种方案用于处理前端传递的 from 表单
 	router.POST("/loginForm", func(c *gin.Context) {
 		var form Login
+
 		if err := c.ShouldBind(&form); err == nil {
 			if form.User == "abc" && form.Password == "123" {
 				// 验证正确
